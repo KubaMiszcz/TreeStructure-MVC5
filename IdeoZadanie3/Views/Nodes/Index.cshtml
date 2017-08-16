@@ -9,9 +9,22 @@
 
 <h2>@ViewBag.Title</h2>
 
-<p data-toggle="tooltip" title="Hooray!">
-    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn-block", @style = "color:white" })
-</p>
+<table>
+    <tr data-toggle="tooltip" title="Hooray!" >
+        <td width="150px">
+            <p >
+                @Html.ActionLink("Create New", "Create", null,
+                new { @class = "btn btn-primary btn-block", @style = "color:white" })
+            </p>
+        </td>
+        <td width="150px">
+            <p>
+                @Html.ActionLink("Expand All", "Index", null,
+                new { @class = "btn btn-primary btn-block", @style = "color:white" })
+            </p>
+        </td>
+    </tr>
+</table>
 <table class="table" border="0">
     <tr>
         <th></th>
@@ -38,12 +51,12 @@
             @Html.DisplayFor(modelItem => item.Note)
         </td>
         <td width="100" style="vertical-align:central;text-align:center;">
-            <div class="dropdown" >
+            <div class="dropdown">
                 <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
                     Node Menu
                     <span class="caret"></span>
                 </button>
-                <ul class="dropdown-menu" >
+                <ul class="dropdown-menu">
                     <li>@Html.ActionLink("Sort", "Index", new { id = item.ID }, new { @class = "btn btn-info " + @item.DisableIfLeaf.State, @style = "color:white; background-color:" + @item.DisableIfLeaf.Color })</li>
                     <li>@Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-warning ", @style = "color:white; " })</li>
                     <li>@Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-info ", @style = "color:white; " })</li>
@@ -51,13 +64,10 @@
                 </ul>
             </div>
             @*@Html.ActionLink("Sort", "Index", new { id = item.ID }, new { @class = "btn btn-primary " + @item.DisableIfLeaf.State, @style = "color:white; width:75px; background-color:" + @item.DisableIfLeaf.Color })
-            @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-primary ", @style = "color:white; width:75px;" })
-            @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-info ", @style = "color:white; width:75px;" })
-            @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger " + @item.DisableIfNotLeaf.State, @style = "color:white; width:75px; background-color:" + @item.DisableIfNotLeaf.Color })*@
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-primary ", @style = "color:white; width:75px;" })
+                @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-info ", @style = "color:white; width:75px;" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger " + @item.DisableIfNotLeaf.State, @style = "color:white; width:75px; background-color:" + @item.DisableIfNotLeaf.Color })*@
         </td>
     </tr>
     }
 </table>
-<p>
-    @Html.ActionLink("Expand All", "Index", null, new { @class = "btn btn-primary btn-block", @style = "color:white" })
-</p>
