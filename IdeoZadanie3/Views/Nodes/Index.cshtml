@@ -1,0 +1,63 @@
+﻿@using IdeoZadanie3.ViewModels
+
+@model IdeoZadanie3.ViewModels.NodesIndexVM
+
+@{
+   ViewBag.Title = "Index";
+}
+
+
+<h2>@ViewBag.Title</h2>
+
+<p data-toggle="tooltip" title="Hooray!">
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn-block", @style = "color:white" })
+</p>
+<table class="table" border="0">
+    <tr>
+        <th></th>
+        <th style="vertical-align:central;text-align:center">
+            <p>Name</p>
+        </th>
+        <th style="vertical-align:central;text-align:center">
+            @Html.DisplayNameFor(model => model.TreeNodeList.First().Note)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.TreeNodeList)
+    {
+        var nodeProp = Model.AddtnlNodeProps[item.ID];
+    <tr class="@nodeProp.RowNameID">
+        <td width="100px" style="vertical-align:central;text-align:center">
+            <input type="button" class="@nodeProp.RowNameID btn btn-warning btn-xs @item.DisableIfLeaf.State" id="@nodeProp.RowNameID" value="Fold" onclick="ToggleFold('@nodeProp.RowNameID',this.id)" style="background-color:@item.DisableIfLeaf.Color" />
+        </td>
+        <td width="300px" style="vertical-align:central;text-align:left">
+            @Html.DisplayFor(modelItem => nodeProp.NameToDisplay)
+        </td>
+        <td width="200" style="vertical-align:central;text-align:center">
+            @Html.DisplayFor(modelItem => item.Note)
+        </td>
+        <td width="100" style="vertical-align:central;text-align:center;">
+            <div class="dropdown" >
+                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                    Node Menu
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" >
+                    <li>@Html.ActionLink("Sort", "Index", new { id = item.ID }, new { @class = "btn btn-info " + @item.DisableIfLeaf.State, @style = "color:white; background-color:" + @item.DisableIfLeaf.Color })</li>
+                    <li>@Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-warning ", @style = "color:white; " })</li>
+                    <li>@Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-info ", @style = "color:white; " })</li>
+                    <li>@Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger " + @item.DisableIfNotLeaf.State, @style = "color:white; background-color:" + @item.DisableIfNotLeaf.Color })</li>
+                </ul>
+            </div>
+            @*@Html.ActionLink("Sort", "Index", new { id = item.ID }, new { @class = "btn btn-primary " + @item.DisableIfLeaf.State, @style = "color:white; width:75px; background-color:" + @item.DisableIfLeaf.Color })
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-primary ", @style = "color:white; width:75px;" })
+            @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-info ", @style = "color:white; width:75px;" })
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger " + @item.DisableIfNotLeaf.State, @style = "color:white; width:75px; background-color:" + @item.DisableIfNotLeaf.Color })*@
+        </td>
+    </tr>
+    }
+</table>
+<p>
+    @Html.ActionLink("Expand All", "Index", null, new { @class = "btn btn-primary btn-block", @style = "color:white" })
+</p>

@@ -1,0 +1,66 @@
+﻿@model IdeoZadanie3.ViewModels.NodeDeleteVM
+
+@{
+   ViewBag.Title = "Details";
+}
+
+<h2>Delete Node</h2>
+
+<div>
+    <h4>Node</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.node.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.node.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.node.Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.node.Note)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ParentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParentName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NumChildrens)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumChildrens)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ChildrensString)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChildrensString)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsLeaf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsLeaf)
+        </dd>
+    </dl>
+    @using (Html.BeginForm())
+    {
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary ", @style = "color:white" })
+        <input type="submit" value="Delete" class="btn btn-danger @Model.DisableIfNotLeaf.State" style ="color:@Model.DisableIfNotLeaf.Color" />
+    </div>
+    }
+</div>
