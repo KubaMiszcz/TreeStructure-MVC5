@@ -1,17 +1,16 @@
-Zadanie testowe – Ideo
+#Zadanie testowe:
+oprogramowanie mechanizmu zarzÄ…dzania strukturÄ… drzewiastÄ… wraz z implementacjÄ… poprawnej obsÅ‚ugi formularzy.
 
-Zadanie polega na oprogramowaniu mechanizmu zarz¹dzania struktur¹ drzewiast¹ wraz z implementacj¹ poprawnej obs³ugi formularzy.
+1. ZaÅ‚oÅ¼enia co do technologii:
+â€¢	baza danych MSSQL/MySQL,
+â€¢	ASP.NET / MVC,
+â€¢	HTML 5, CSS 3.
 
-1. Za³o¿enia co do technologii:
-•	baza danych MSSQL/MySQL,
-•	ASP.NET / MVC,
-•	HTML 5, CSS 3.
-
-2. Za³o¿enia dotycz¹ce realizacja zadania:
-•	struktura drzewiasta ma umo¿liwiaæ dzia³anie na dowolnej iloœci poziomów,
-•	funkcje jakie maj¹ byæ dostêpne dla administratora: dodawanie, edycja, usuwania, sortowanie (zarówno wêz³ów jak i liœci), przenoszenie wêz³ów do innych ga³êzi,
-•	powinna byæ mo¿liwoœæ rozwiniêcia ca³ej struktury lub wybranych wêz³ów,
-•	powinny zostaæ zastosowane zabezpieczenia uniemo¿liwiaj¹ce wprowadzanie nieprawid³owych danych,
-•	wskazane zastosowanie skryptów client-side (w³asnych, nie gotowych rozwi¹zañ jak np. jsTree)
-•	obs³uga formularzy powinna zawieraæ klasê do generowania formularzy wraz z wizualizacj¹, walidacj¹ oraz zabezpieczeniami.
+2. ZaÅ‚oÅ¼enia dotyczÄ…ce realizacja zadania:
+â€¢	struktura drzewiasta ma umoÅ¼liwiaÄ‡ dziaÅ‚anie na dowolnej iloÅ›ci poziomÃ³w,
+â€¢	funkcje jakie majÄ… byÄ‡ dostÄ™pne dla administratora: dodawanie, edycja, usuwania, sortowanie (zarÃ³wno wÄ™zÅ‚Ã³w jak i liÅ›ci), przenoszenie wÄ™zÅ‚Ã³w do innych gaÅ‚Ä™zi,
+â€¢	powinna byÄ‡ moÅ¼liwoÅ›Ä‡ rozwiniÄ™cia caÅ‚ej struktury lub wybranych wÄ™zÅ‚Ã³w,
+â€¢	powinny zostaÄ‡ zastosowane zabezpieczenia uniemoÅ¼liwiajÄ…ce wprowadzanie nieprawidÅ‚owych danych,
+â€¢	wskazane zastosowanie skryptÃ³w client-side (wÅ‚asnych, nie gotowych rozwiÄ…zaÅ„ jak np. jsTree)
+â€¢	obsÅ‚uga formularzy powinna zawieraÄ‡ klasÄ™ do generowania formularzy wraz z wizualizacjÄ…, walidacjÄ… oraz zabezpieczeniami.
 
